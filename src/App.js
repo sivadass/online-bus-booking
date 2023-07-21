@@ -6,7 +6,9 @@ function App() {
   return (
     <div className="">
       <Header />
-      <HomePage />
+      <main className="py-3 max-w-5xl mx-auto">
+        <HomePage />
+      </main>
       <Footer />
     </div>
   );
