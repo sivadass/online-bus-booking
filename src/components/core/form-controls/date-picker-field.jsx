@@ -5,7 +5,7 @@ import { useField, useFormikContext } from "formik";
 import Typography from "../typography";
 import "react-day-picker/dist/style.css";
 
-const DatePicker = ({ label, name, placeholder, ...props }) => {
+const DatePickerField = ({ label, name, placeholder, ...props }) => {
   const ref = useRef(null);
   const [field, meta] = useField(name);
   const { setFieldValue } = useFormikContext();
@@ -21,7 +21,7 @@ const DatePicker = ({ label, name, placeholder, ...props }) => {
     if (date) {
       console.log(typeof date);
       setSelected(date);
-      const val = format(date, "y-MM-dd");
+      const val = format(date, "dd-MM-y");
       setFieldValue(name, val);
       setIsOpen(false);
     } else {
@@ -42,7 +42,7 @@ const DatePicker = ({ label, name, placeholder, ...props }) => {
   }, []);
 
   useEffect(() => {
-    const [year, month, date] = field.value?.split("-");
+    const [date, month, year] = field.value?.split("-");
     const defaultDate = new Date(year, month - 1, date);
     setSelected(defaultDate);
   }, []);
@@ -79,4 +79,4 @@ const DatePicker = ({ label, name, placeholder, ...props }) => {
   );
 };
 
-export default DatePicker;
+export default DatePickerField;

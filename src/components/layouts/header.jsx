@@ -24,7 +24,7 @@ const Header = () => {
         <a href="/">
           <div className="flex items-center flex-wrap gap-3">
             <img className="w-8 h-8" src="/obb-logo.svg" alt="OBB Logo" />
-            <h1 className="text-xl leading-normal">Online Bus Booking</h1>
+            <h1 className="text-xl leading-normal bold">Online Bus Booking</h1>
           </div>
         </a>
 

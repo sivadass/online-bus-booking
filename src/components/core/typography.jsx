@@ -23,7 +23,7 @@ const Typography = ({ children, variant = "p", className = "" }) => {
             );
           }
           case "h3": {
-            const variantClass = "text-xl";
+            const variantClass = "text-lg";
             return (
               <h3 className={classNames(baseClass, variantClass, className)}>
                 {children}

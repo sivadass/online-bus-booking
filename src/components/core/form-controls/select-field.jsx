@@ -1,6 +1,7 @@
 import Select, { components } from "react-select";
 import classNames from "classnames";
 import { useField, useFormikContext } from "formik";
+import Typography from "../typography";
 
 const DropdownIndicator = (props) => {
   return (
@@ -56,10 +57,11 @@ const optionStyles = {
 const noOptionsMessageStyles =
   "text-gray-500 p-2 bg-gray-50 border border-dashed border-gray-200 rounded-sm";
 
-const ReactSelect = (props) => {
-  const { name, label, ...restProps } = props;
-  const [field] = useField(name);
+const SelectField = (props) => {
+  const { name, label, className = "", ...restProps } = props;
+  const [field, meta] = useField(name);
   const { setFieldValue } = useFormikContext();
+  const isError = meta.touched && meta.error;
   //flatten the options so that it will be easier to find the value
   const flattenedOptions = props.options?.flatMap((o) => {
     const isNotGrouped = "value" in o;
@@ -82,10 +84,9 @@ const ReactSelect = (props) => {
     }
   });
   return (
-    <div>
+    <div className={className}>
       <label>{label}</label>
       <Select
-        isMulti
         closeMenuOnSelect={false}
         hideSelectedOptions={false}
         unstyled
@@ -151,8 +152,12 @@ const ReactSelect = (props) => {
         }}
         {...props}
       />
+
+      {isError ? (
+        <Typography margin={[8, 0, 0, 0]}>{meta.error}</Typography>
+      ) : null}
     </div>
   );
 };
 
-export default ReactSelect;
+export default SelectField;

@@ -11,7 +11,11 @@ module.exports = {
     fontFamily: {
       sans: ["Inter", "sans-serif"],
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        "hero-banner": "url('/public/hero-banner.svg')",
+      },
+    },
   },
   plugins: [],
 };

@@ -3,7 +3,7 @@ import { Formik, Form } from "formik";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import Button from "../components/core/button";
-import InputField from "../components/core/form-controls/input";
+import InputField from "../components/core/form-controls/input-field";
 import Typography from "../components/core/typography";
 import { mobilePattern } from "../constants/regex-patterns";
 import { AuthDispatchContext, AuthStateContext, login } from "../contexts/auth";
