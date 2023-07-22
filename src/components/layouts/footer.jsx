@@ -1,12 +1,13 @@
+import Typography from "../core/typography";
 const Footer = () => {
   return (
-    <footer className="flex justify-center">
-      <p>
+    <footer className="bg-slate-200 py-5 flex justify-center">
+      <Typography>
         <span>
           &copy; 2023 <a href="/">OBB - Online Bus Booking</a>.
         </span>
         <span>&nbsp; All rights reserved.</span>
-      </p>
+      </Typography>
     </footer>
   );
 };

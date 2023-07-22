@@ -1,1 +1,1 @@
-SITE_NAME = "OBB";
+export const SITE_NAME = "OBB";

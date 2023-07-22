@@ -4,6 +4,8 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Root from "./components/layouts/root";
 import FlashScreen from "./components/loader";
 import ProtectedRoute from "./components/layouts/protected";
+import "./index.css";
+
 const ErrorPage = lazy(() => import("./pages/error"));
 const LoginPage = lazy(() => import("./pages/login"));
 const IndexPage = lazy(() => import("./pages/index"));
