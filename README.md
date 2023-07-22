@@ -17,3 +17,7 @@ In the project's root, you can run the following commands:
 - It correctly bundles React in production mode and optimizes the build for the best performance.
 - The build is minified and the filenames include the hashes.
 - Your app is ready to be deployed!
+
+## Mock Data
+
+Mock data is available for `Chennai to Pondicherry` on `23-07-2023` combination.

@@ -84,7 +84,7 @@ const SelectField = (props) => {
     }
   });
   return (
-    <div className={className}>
+    <div className={classNames("mb-3", className)}>
       <label>{label}</label>
       <Select
         closeMenuOnSelect={false}

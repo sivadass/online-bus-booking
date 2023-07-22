@@ -2,16 +2,18 @@ import { useReducer, createContext } from "react";
 import { getJSON } from "../utils/axios";
 
 const initialState = {
-  isMenuOpen: true,
   locations: null,
+  selectedSchedule: null,
+  selectedSeats: [],
 };
 
 export const CommonStateContext = createContext();
 export const CommonDispatchContext = createContext();
 
 const ACTION_TYPES = {
-  TOGGLE_MENU: "TOGGLE_MENU",
   SET_LOCATIONS: "SET_LOCATIONS",
+  SET_SCHEDULE: "SET_SCHEDULE",
+  SET_SELECTED_SEATS: "SET_SELECTED_SEATS",
 };
 
 const reducer = (state, action) => {
@@ -21,10 +23,16 @@ const reducer = (state, action) => {
         ...state,
         locations: action.payload.locations,
       };
-    case ACTION_TYPES.TOGGLE_MENU:
+    case ACTION_TYPES.SET_SCHEDULE:
       return {
         ...state,
-        isMenuOpen: action.payload.isMenuOpen,
+        selectedSchedule: action.payload.selectedSchedule,
+        // selectedSeats: [],
+      };
+    case ACTION_TYPES.SET_SELECTED_SEATS:
+      return {
+        ...state,
+        selectedSeats: action.payload.selectedSeats,
       };
     default:
       throw new Error(`Unknown action: ${action.type}`);
@@ -42,11 +50,20 @@ const CommonProvider = ({ children }) => {
   );
 };
 
-export const toggleMenu = (dispatch, isMenuOpen) => {
+export const setCurrentSchedule = (dispatch, selectedSchedule) => {
   dispatch({
-    type: ACTION_TYPES.TOGGLE_MENU,
+    type: ACTION_TYPES.SET_SCHEDULE,
     payload: {
-      isMenuOpen,
+      selectedSchedule,
+    },
+  });
+};
+
+export const setSelectedSeats = (dispatch, selectedSeats) => {
+  dispatch({
+    type: ACTION_TYPES.SET_SELECTED_SEATS,
+    payload: {
+      selectedSeats,
     },
   });
 };

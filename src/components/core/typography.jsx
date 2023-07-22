@@ -1,7 +1,7 @@
 import classNames from "classnames";
 
 const Typography = ({ children, variant = "p", className = "" }) => {
-  const baseClass = "font-normal leading-normal";
+  const baseClass = "leading-normal";
   return (
     <>
       {(() => {

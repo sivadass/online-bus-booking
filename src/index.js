@@ -10,6 +10,7 @@ const ErrorPage = lazy(() => import("./pages/error"));
 const LoginPage = lazy(() => import("./pages/login"));
 const IndexPage = lazy(() => import("./pages/index"));
 const SchedulesPage = lazy(() => import("./pages/schedules"));
+const BookingPage = lazy(() => import("./pages/booking"));
 const BookingResultPage = lazy(() => import("./pages/booking-result"));
 
 const ROUTES_WITHOUT_HEADER_FOOTER = ["/login"];
@@ -33,6 +34,14 @@ const router = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <SchedulesPage />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/booking",
+        element: (
+          <ProtectedRoute>
+            <BookingPage />
           </ProtectedRoute>
         ),
       },
