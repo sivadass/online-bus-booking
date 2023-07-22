@@ -38,7 +38,7 @@ const SortForm = ({ onSort }) => {
               name="sortBy"
               placeholder="Sort by"
               options={sortOptions}
-              className="mb-0"
+              className="!mb-0"
             />
             <Button
               type="submit"
@@ -64,7 +64,6 @@ const SchedulesItem = ({ schedule }) => {
     "bg-slate-100 hover:bg-amber-100 hover:cursor-pointer rounded-lg mb-5";
 
   const handleSelectSchedule = (scheduleData) => {
-    console.log("scheduleData", scheduleData);
     setCurrentSchedule(dispatch, scheduleData);
   };
   return (
@@ -125,9 +124,9 @@ const SchedulesPage = () => {
     locations?.find((f) => f.value === Number(from))?.label || "";
   const toLocationName =
     locations?.find((f) => f.value === Number(to))?.label || "";
+
   const sortedSchedules = useMemo(() => {
     let sortedData = [...schedules];
-    console.log(sortedData);
     if (sortBy === "price-asc") {
       sortedData = sortedData.sort((a, b) => (a.pricing > b.pricing ? 1 : -1));
     }
@@ -179,7 +178,7 @@ const SchedulesPage = () => {
     if (!locations) {
       getLocations(dispatch);
     }
-  }, [locations]);
+  }, [locations, dispatch]);
 
   return (
     <div className="container m-auto">

@@ -12,7 +12,7 @@ const BookingResultPage = () => {
   return (
     <div className="container m-auto min-h-[calc(100vh-136px)] flex items-center">
       <div className="bg-slate-50 p-10 rounded-lg flex-1 m-auto text-center">
-        <img src="/check-mark.svg" className="m-auto" />
+        <img src="/check-mark.svg" className="m-auto" alt="Success" />
         <Typography variant="h1" className="mt-10 mb-2 text-center">
           Booking Confirmed!
         </Typography>

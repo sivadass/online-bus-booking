@@ -19,7 +19,6 @@ const DatePickerField = ({ label, name, placeholder, ...props }) => {
 
   const handleDaySelect = (date) => {
     if (date) {
-      console.log(typeof date);
       setSelected(date);
       const val = format(date, "dd-MM-y");
       setFieldValue(name, val);

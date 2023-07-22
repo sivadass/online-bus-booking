@@ -15,7 +15,7 @@ const loginSchema = Yup.object().shape({
 });
 
 const LoginPage = () => {
-  const { isLoggedIn, user } = useContext(AuthStateContext);
+  const { isLoggedIn } = useContext(AuthStateContext);
   const dispatch = useContext(AuthDispatchContext);
   const navigate = useNavigate();
 
@@ -30,10 +30,10 @@ const LoginPage = () => {
   }, [isLoggedIn, navigate]);
 
   return (
-    <div className="container flex items-center min-h-[calc(100vh-136px)]">
-      <div className="flex items-center w-1/2 m-auto bg-slate-100 rounded-3xl flex-wrap">
+    <div className="flex items-center justify-center min-h-[calc(100vh-136px)]">
+      <div className="flex items-center w-1/2 mx-auto bg-slate-100 rounded-3xl flex-wrap">
         <div className="w-1/2 py-10 px-10 bg-slate-300 rounded-l-3xl">
-          <img src="/otp.svg" className="opacity-50" />
+          <img src="/otp.svg" className="opacity-50" alt="Welcome" />
         </div>
         <div className="w-1/2 p-10">
           <Typography variant="h2" className="mb-8">

@@ -59,7 +59,7 @@ const BookingForm = ({ initialValues, onSubmit, price }) => {
         {({ values, handleSubmit }) => (
           <Form>
             <FieldArray name="passengers">
-              {({}) => (
+              {() => (
                 <div>
                   {values?.passengers?.length > 0 &&
                     values?.passengers?.map((passenger, index) => (
@@ -112,6 +112,7 @@ const BookingPage = () => {
   const { selectedSchedule, selectedSeats } = useContext(CommonStateContext);
   const { user } = useContext(AuthStateContext);
   const dispatch = useContext(CommonDispatchContext);
+  // eslint-disable-next-line no-unused-vars
   const [_, setPersistedBookings] = useLocalStorage("bookings", []);
   const navigate = useNavigate();
 
@@ -132,7 +133,7 @@ const BookingPage = () => {
     return {
       passengers,
     };
-  }, [selectedSeats, selectedSchedule]);
+  }, [selectedSeats]);
 
   const handleBooking = (values) => {
     const bookingData = {
@@ -151,7 +152,7 @@ const BookingPage = () => {
     if (selectedSeats?.length === 0) {
       navigate("/");
     }
-  }, [selectedSeats]);
+  }, [selectedSeats, navigate]);
 
   return (
     <div className="container m-auto min-h-[calc(100vh-136px)] flex items-center">

@@ -4,7 +4,6 @@ import {
   AuthDispatchContext,
   logout,
 } from "../../contexts/auth";
-import Typography from "../core/typography";
 import Button from "../core/button";
 import { useNavigate } from "react-router-dom";
 

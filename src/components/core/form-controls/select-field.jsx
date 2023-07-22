@@ -58,7 +58,7 @@ const noOptionsMessageStyles =
   "text-gray-500 p-2 bg-gray-50 border border-dashed border-gray-200 rounded-sm";
 
 const SelectField = (props) => {
-  const { name, label, className = "", ...restProps } = props;
+  const { name, label, className = "" } = props;
   const [field, meta] = useField(name);
   const { setFieldValue } = useFormikContext();
   const isError = meta.touched && meta.error;

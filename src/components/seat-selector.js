@@ -27,8 +27,8 @@ const Seat = ({ data, isSeatSelected, isSeatBooked, onSelect }) => {
   return (
     <div
       className={classNames(baseClass, {
-        "bg-green-400 border-transparent": isSeatSelected,
-        "bg-red-400 border-transparent": isSeatBooked,
+        "bg-slate-900 border-transparent text-white": isSeatSelected,
+        "bg-slate-300 border-transparent cursor-not-allowed": isSeatBooked,
       })}
       onClick={() => handleSelect(data.seatNo)}
     >
