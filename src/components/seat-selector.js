@@ -8,10 +8,8 @@ import {
   CommonStateContext,
   setSelectedSeats as updateSelectedSheets,
 } from "../contexts/common";
+import { MAX_SEATS } from "../constants/common";
 import useLocalStorage from "../hooks/use-localstorage";
-
-const maxSeats = 32;
-const defaultSeatsArr = new Array(maxSeats);
 
 const Seat = ({ data, isSeatSelected, isSeatBooked, onSelect }) => {
   const baseClass =
@@ -40,12 +38,12 @@ const Seat = ({ data, isSeatSelected, isSeatBooked, onSelect }) => {
 };
 
 const SeatSelector = () => {
+  const defaultSeatsArr = Array.from({ length: MAX_SEATS });
   const dispatch = useContext(CommonDispatchContext);
   const { selectedSchedule } = useContext(CommonStateContext);
   const [selectedSeats, setSelectedSeats] = useState([]);
   const navigate = useNavigate();
   const [persistedBookings] = useLocalStorage("bookings", []);
-
   const seats = [...defaultSeatsArr].map((_, index) => ({
     seatNo: index + 1,
     isSelected: false,

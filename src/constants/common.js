@@ -1,3 +1,5 @@
+export const MAX_SEATS = 32;
+
 export const sortOptions = [
   {
     label: "Rating - Ascending",
